@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="C.R.A.C.K Project Backend - Project Detail" />
+    <meta
+      name="description"
+      content="C.R.A.C.K Project Backend - Full-Stack Developer"
+    />
+    <meta name="keywords" content="portfolio, project, backend, full-stack" />
+    <meta name="author" content="Perhisi Ardhian" />
+    <title>C.R.A.C.K Project Backend | Project Detail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="icon" href="icons/img.webp" type="image/x-icon" />
+    <link rel="stylesheet" href="tailwind.css" />
+  </head>
+  <body
+    class="min-h-screen px-4 sm:px-6 md:px-8 lg:px-12 font-mono bg-slate-50 dark:bg-slate-900 dark:text-white selection:bg-indigo-500 selection:text-white"
+  >
+    <!-- Header Section -->
+    <header
+      class="glass-header fixed top-0 left-0 right-0 z-50 h-16 flex items-center"
+    >
+      <div
+        class="container mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8"
+      >
+        <div class="flex items-center gap-3">
+          <a
+            href="https://www.revou.co/"
+            aria-label="Revou Homepage"
+            class="group"
+          >
+            <img
+              src="icons/img.webp"
+              alt="Revou Logo"
+              class="w-10 h-10 object-contain rounded-full border-2 border-indigo-500 group-hover:border-teal-400 transition-colors duration-300"
+            />
+          </a>
+          <span class="hidden sm:block text-lg font-semibold gradient-text"
+            >Perhisi</span
+          >
+        </div>
+
+        <nav id="desktop-menu" class="hidden md:flex items-center gap-8">
+          <a
+            href="index.html#home"
+            class="nav-link text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors duration-300"
+            >Home</a
+          >
+          <a
+            href="index.html#about"
+            class="nav-link text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors duration-300"
+            >About</a
+          >
+          <a
+            href="index.html#projects"
+            class="nav-link text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors duration-300"
+            >Projects</a
+          >
+          <a
+            href="index.html#contact"
+            class="nav-link text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors duration-300"
+            >Contact</a
+          >
+        </nav>
+
+        <div class="flex gap-4 items-center">
+          <div class="hidden sm:flex gap-3">
+            <a
+              href="https://github.com/perhisi"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="My GitHub Profile"
+              class="social-icon p-2 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-indigo-100 dark:hover:bg-indigo-900/30 transition-colors duration-300"
+            >
+              <img src="icons/github.svg" alt="GitHub" class="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/perhisi-ardhian-dec89/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="My LinkedIn Profile"
+              class="social-icon p-2 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-indigo-100 dark:hover:bg-indigo-900/30 transition-colors duration-300"
+            >
+              <img src="icons/linkedin.svg" alt="LinkedIn" class="w-5 h-5" />
+            </a>
+          </div>
+
+          <button
+            id="mobile-open-button"
+            class="md:hidden text-2xl p-2 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-indigo-100 dark:hover:bg-indigo-900/30 transition-colors duration-300"
+            aria-label="Open mobile menu"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <nav
+      id="mobile-menu"
+      class="hidden md:hidden fixed inset-0 z-40 bg-slate-900/95 dark:bg-slate-900/98 backdrop-blur-sm"
+    >
+      <div class="flex flex-col items-center justify-center h-full gap-8">
+        <a
+          href="index.html#home"
+          class="text-2xl font-semibold text-white hover:text-indigo-400"
+          >Home</a
+        >
+        <a
+          href="index.html#about"
+          class="text-2xl font-semibold text-white hover:text-indigo-400"
+          >About</a
+        >
+        <a
+          href="index.html#projects"
+          class="text-2xl font-semibold text-white hover:text-indigo-400"
+          >Projects</a
+        >
+        <a
+          href="index.html#contact"
+          class="text-2xl font-semibold text-white hover:text-indigo-400"
+          >Contact</a
+        >
+        <button
+          id="mobile-close-button"
+          class="absolute top-4 right-4 text-white text-3xl p-2"
+        >
+          &times;
+        </button>
+      </div>
+    </nav>
+
+    <!-- Project Detail Section -->
+    <section class="min-h-screen pt-24 pb-16">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Back Button -->
+        <a
+          href="index.html#projects"
+          class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-300 mb-8 group"
+        >
+          <svg
+            class="w-5 h-5 transform group-hover:-translate-x-1 transition-transform duration-300"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            ></path>
+          </svg>
+          Back to Projects
+        </a>
+
+        <!-- Project Header -->
+        <div class="max-w-4xl mx-auto mb-12">
+          <h1
+            class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-800 dark:text-white"
+          >
+            C.R.A.C.K Project Backend
+          </h1>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span
+              class="badge bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 px-4 py-2 rounded-full text-sm font-medium"
+              >Nest.js</span
+            >
+            <span
+              class="badge bg-teal-100 dark:bg-teal-900/50 text-teal-700 dark:text-teal-300 px-4 py-2 rounded-full text-sm font-medium"
+              >PostgreSQL</span
+            >
+            <span
+              class="badge bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 px-4 py-2 rounded-full text-sm font-medium"
+              >Prisma ORM</span
+            >
+            <span
+              class="badge bg-teal-100 dark:bg-teal-900/50 text-teal-700 dark:text-teal-300 px-4 py-2 rounded-full text-sm font-medium"
+              >Passport-JWT</span
+            >
+            <span
+              class="badge bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 px-4 py-2 rounded-full text-sm font-medium"
+              >Bcrypt</span
+            >
+          </div>
+          <p class="text-lg text-slate-600 dark:text-slate-300">
+            Backend development for C.R.A.C.K educational platform with secure
+            authentication, role-based access control, and robust database
+            architecture.
+          </p>
+        </div>
+
+        <!-- Project Image -->
+        <div class="max-w-5xl mx-auto mb-12">
+          <div
+            class="glass-card rounded-2xl overflow-hidden shadow-2xl p-8 bg-gradient-to-br from-indigo-500 via-purple-500 to-teal-500"
+          >
+            <div class="text-center text-white">
+              <svg
+                class="w-24 h-24 mx-auto mb-4 opacity-80"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
+                ></path>
+              </svg>
+              <h2 class="text-2xl font-bold">C.R.A.C.K Project</h2>
+              <p class="opacity-80">Backend Architecture</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Content Grid -->
+        <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- Main Content -->
+          <div class="lg:col-span-2 space-y-8">
+            <!-- Overview -->
+            <div class="glass-card rounded-2xl p-6 sm:p-8 shadow-xl">
+              <h2
+                class="text-2xl font-bold mb-4 text-slate-800 dark:text-white"
+              >
+                Project Overview
+              </h2>
+              <p
+                class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4"
+              >
+                C.R.A.C.K is a comprehensive educational platform built with
+                Nest.js backend, featuring secure authentication systems,
+                role-based access control, and efficient data management using
+                Prisma ORM with PostgreSQL.
+              </p>
+              <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                This backend system handles user authentication, course
+                management, and administrative operations with a focus on
+                security, scalability, and maintainability.
+              </p>
+            </div>
+
+            <!-- Key Features -->
+            <div class="glass-card rounded-2xl p-6 sm:p-8 shadow-xl">
+              <h2
+                class="text-2xl font-bold mb-6 text-slate-800 dark:text-white"
+              >
+                Key Responsibilities
+              </h2>
+              <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-6 h-6 bg-indigo-100 dark:bg-indigo-900/50 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                  >
+                    <svg
+                      class="w-4 h-4 text-indigo-600 dark:text-indigo-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                  </span>
+                  <div>
+                    <span class="font-semibold text-slate-800 dark:text-white"
+                      >Secure Authentication System</span
+                    >
+                    <p class="text-slate-600 dark:text-slate-400 text-sm">
+                      Engineered a secure authentication system using
+                      Passport-JWT and Bcrypt to protect sensitive user data and
+                      manage session persistence.
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-6 h-6 bg-indigo-100 dark:bg-indigo-900/50 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                  >
+                    <svg
+                      class="w-4 h-4 text-indigo-600 dark:text-indigo-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                  </span>
+                  <div>
+                    <span class="font-semibold text-slate-800 dark:text-white"
+                      >Role-Based Access Control (RBAC)</span
+                    >
+                    <p class="text-slate-600 dark:text-slate-400 text-sm">
+                      Developed a role-based access control framework with
+                      custom guards to strictly differentiate administrative
+                      privileges from student access levels.
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-6 h-6 bg-indigo-100 dark:bg-indigo-900/50 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                  >
+                    <svg
+                      class="w-4 h-4 text-indigo-600 dark:text-indigo-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                  </span>
+                  <div>
+                    <span class="font-semibold text-slate-800 dark:text-white"
+                      >Relational Database Schema</span
+                    >
+                    <p class="text-slate-600 dark:text-slate-400 text-sm">
+                      Architected a relational database schema using Prisma ORM
+                      and PostgreSQL to efficiently manage many-to-many
+                      relationships between users and courses.
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-6 h-6 bg-indigo-100 dark:bg-indigo-900/50 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                  >
+                    <svg
+                      class="w-4 h-4 text-indigo-600 dark:text-indigo-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                  </span>
+                  <div>
+                    <span class="font-semibold text-slate-800 dark:text-white"
+                      >Data Validation Pipes</span
+                    >
+                    <p class="text-slate-600 dark:text-slate-400 text-sm">
+                      Created automated data validation and transformation pipes
+                      globally to ensure API reliability and maintain consistent
+                      data integrity across all endpoints.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Technical Highlights -->
+            <div class="glass-card rounded-2xl p-6 sm:p-8 shadow-xl">
+              <h2
+                class="text-2xl font-bold mb-6 text-slate-800 dark:text-white"
+              >
+                Technical Highlights
+              </h2>
+              <div class="space-y-4">
+                <div
+                  class="p-4 rounded-xl bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200 dark:border-indigo-800"
+                >
+                  <h3
+                    class="text-lg font-semibold text-indigo-600 dark:text-indigo-400 mb-2"
+                  >
+                    Security First
+                  </h3>
+                  <p class="text-slate-600 dark:text-slate-400 text-sm">
+                    Implemented JWT tokens with refresh token rotation for
+                    persistent and secure sessions. All passwords hashed with
+                    Bcrypt for maximum security.
+                  </p>
+                </div>
+                <div
+                  class="p-4 rounded-xl bg-teal-50 dark:bg-teal-900/20 border border-teal-200 dark:border-teal-800"
+                >
+                  <h3
+                    class="text-lg font-semibold text-teal-600 dark:text-teal-400 mb-2"
+                  >
+                    Scalable Architecture
+                  </h3>
+                  <p class="text-slate-600 dark:text-slate-400 text-sm">
+                    Built with Nest.js modular architecture allowing easy
+                    scaling and maintenance. Used dependency injection for loose
+                    coupling.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="space-y-6">
+            <!-- Project Info Card -->
+            <div class="glass-card rounded-2xl p-6 shadow-xl">
+              <h3
+                class="text-lg font-semibold mb-4 text-slate-800 dark:text-white"
+              >
+                Project Information
+              </h3>
+              <ul class="space-y-4">
+                <li>
+                  <span class="text-sm text-slate-500 dark:text-slate-400"
+                    >Role</span
+                  >
+                  <p class="text-slate-800 dark:text-white font-medium">
+                    Backend Developer
+                  </p>
+                </li>
+                <li>
+                  <span class="text-sm text-slate-500 dark:text-slate-400"
+                    >Timeline</span
+                  >
+                  <p class="text-slate-800 dark:text-white font-medium">
+                    Nov, 2025 - Jan, 2026
+                  </p>
+                </li>
+                <li>
+                  <span class="text-sm text-slate-500 dark:text-slate-400"
+                    >Category</span
+                  >
+                  <p class="text-slate-800 dark:text-white font-medium">
+                    Backend Development
+                  </p>
+                </li>
+                <li>
+                  <span class="text-sm text-slate-500 dark:text-slate-400"
+                    >Team Size</span
+                  >
+                  <p class="text-slate-800 dark:text-white font-medium">
+                    4 Members
+                  </p>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="glass-card rounded-2xl p-6 shadow-xl">
+              <h3
+                class="text-lg font-semibold mb-4 text-slate-800 dark:text-white"
+              >
+                Tech Stack
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="badge bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 px-3 py-1 rounded-lg text-sm"
+                  >Nest.js</span
+                >
+                <span
+                  class="badge bg-teal-100 dark:bg-teal-900/50 text-teal-700 dark:text-teal-300 px-3 py-1 rounded-lg text-sm"
+                  >TypeScript</span
+                >
+                <span
+                  class="badge bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 px-3 py-1 rounded-lg text-sm"
+                  >PostgreSQL</span
+                >
+                <span
+                  class="badge bg-teal-100 dark:bg-teal-900/50 text-teal-700 dark:text-teal-300 px-3 py-1 rounded-lg text-sm"
+                  >Prisma ORM</span
+                >
+                <span
+                  class="badge bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 px-3 py-1 rounded-lg text-sm"
+                  >Passport-JWT</span
+                >
+                <span
+                  class="badge bg-teal-100 dark:bg-teal-900/50 text-teal-700 dark:text-teal-300 px-3 py-1 rounded-lg text-sm"
+                  >Bcrypt</span
+                >
+                <span
+                  class="badge bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 px-3 py-1 rounded-lg text-sm"
+                  >Railway</span
+                >
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="glass-card rounded-2xl p-6 shadow-xl">
+              <h3
+                class="text-lg font-semibold mb-4 text-slate-800 dark:text-white"
+              >
+                View Project
+              </h3>
+              <div class="space-y-3">
+                <a
+                  href="#"
+                  target="_blank"
+                  class="block w-full bg-indigo-600 hover:bg-indigo-700 text-white text-center py-3 px-4 rounded-xl font-semibold transition-all duration-300 btn-primary"
+                >
+                  Live Demo
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  class="block w-full bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-800 dark:text-white text-center py-3 px-4 rounded-xl font-semibold transition-all duration-300"
+                >
+                  Source Code
+                </a>
+              </div>
+            </div>
+
+            <!-- Other Projects -->
+            <div class="glass-card rounded-2xl p-6 shadow-xl">
+              <h3
+                class="text-lg font-semibold mb-4 text-slate-800 dark:text-white"
+              >
+                Other Projects
+              </h3>
+              <div class="space-y-3">
+                <a
+                  href="project-3.html"
+                  class="block p-3 rounded-xl bg-slate-100 dark:bg-slate-700/50 hover:bg-indigo-100 dark:hover:bg-indigo-900/30 transition-colors duration-300"
+                >
+                  <span
+                    class="text-slate-800 dark:text-white font-medium text-sm"
+                    >C.R.A.C.K Frontend</span
+                  >
+                  <span
+                    class="block text-xs text-slate-500 dark:text-slate-400 mt-1"
+                    >Next.js, Tailwind CSS</span
+                  >
+                </a>
+                <a
+                  href="project-4.html"
+                  class="block p-3 rounded-xl bg-slate-100 dark:bg-slate-700/50 hover:bg-indigo-100 dark:hover:bg-indigo-900/30 transition-colors duration-300"
+                >
+                  <span
+                    class="text-slate-800 dark:text-white font-medium text-sm"
+                    >Milestone 4 Backend</span
+                  >
+                  <span
+                    class="block text-xs text-slate-500 dark:text-slate-400 mt-1"
+                    >Nest.js, JWT</span
+                  >
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-slate-200 dark:border-slate-700">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col sm:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-slate-500 dark:text-slate-400 text-sm">
+            © 2024 Perhisi Ardhian. All rights reserved.
+          </p>
+          <div class="flex gap-4">
+            <a
+              href="https://github.com/perhisi"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-indigo-100 dark:hover:bg-indigo-900/30"
+            >
+              <img src="icons/github.svg" alt="GitHub" class="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/perhisi-ardhian-dec89/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-indigo-100 dark:hover:bg-indigo-900/30"
+            >
+              <img src="icons/linkedin.svg" alt="LinkedIn" class="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const mobileMenu = document.getElementById("mobile-menu");
+      const mobileOpenButton = document.getElementById("mobile-open-button");
+      const mobileCloseButton = document.getElementById("mobile-close-button");
+
+      mobileOpenButton.addEventListener("click", () =>
+        mobileMenu.classList.remove("hidden"),
+      );
+      mobileCloseButton.addEventListener("click", () =>
+        mobileMenu.classList.add("hidden"),
+      );
+      mobileMenu
+        .querySelectorAll("a")
+        .forEach((link) =>
+          link.addEventListener("click", () =>
+            mobileMenu.classList.add("hidden"),
+          ),
+        );
+    </script>
+  </body>
+</html>
