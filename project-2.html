@@ -211,10 +211,11 @@
           </p>
         </div>
 
-        <!-- Project Image -->
+        <!-- Project Image Gallery -->
         <div class="max-w-5xl mx-auto mb-12">
           <div
-            class="glass-card rounded-2xl overflow-hidden shadow-2xl p-8 bg-gradient-to-br from-indigo-500 via-purple-500 to-teal-500"
+            class="glass-card rounded-2xl overflow-hidden shadow-2xl p-8 bg-gradient-to-br from-indigo-500 via-purple-500 to-teal-500 cursor-pointer group"
+            onclick="openImageModal(0)"
           >
             <div class="text-center text-white">
               <svg
@@ -233,6 +234,52 @@
               <h2 class="text-2xl font-bold">C.R.A.C.K Project</h2>
               <p class="opacity-80">Backend Architecture</p>
             </div>
+          </div>
+        </div>
+
+        <!-- Thumbnail Gallery -->
+        <div class="max-w-5xl mx-auto mb-12">
+          <div class="flex gap-3 overflow-x-auto pb-2">
+            <button
+              onclick="openImageModal(0)"
+              class="thumbnail-btn flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden border-2 border-indigo-500 ring-2 ring-indigo-500/30 transition-all duration-300 hover:scale-105 bg-gradient-to-br from-indigo-500 via-purple-500 to-teal-500 flex items-center justify-center"
+            >
+            <img
+            src="icons/project-2/Screenshot 2026-01-28 032931.png"
+            alt="Thumbnail 1"
+            class="w-full h-full object-cover"
+          />
+            </button>
+            <button
+              onclick="openImageModal(1)"
+              class="thumbnail-btn flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden border-2 border-slate-300 dark:border-slate-600 opacity-60 hover:opacity-100 transition-all duration-300 hover:scale-105 bg-gradient-to-br from-indigo-600 via-purple-600 to-teal-600 flex items-center justify-center"
+            >
+              <img
+              src="icons/project-2/supabase-schema.png"
+              alt="Thumbnail 2"
+              class="w-full h-full object-cover"
+            />
+            </button>
+            <button
+              onclick="openImageModal(2)"
+              class="thumbnail-btn flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden border-2 border-slate-300 dark:border-slate-600 opacity-60 hover:opacity-100 transition-all duration-300 hover:scale-105 bg-gradient-to-br from-indigo-700 via-purple-700 to-teal-700 flex items-center justify-center"
+            >
+            <img
+            src="icons/project-2/Screenshot 2026-03-15 095801.png"
+            alt="Thumbnail 3"
+            class="w-full h-full object-cover"
+          />
+            </button>
+            <button
+              onclick="openImageModal(3)"
+              class="thumbnail-btn flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden border-2 border-slate-300 dark:border-slate-600 opacity-60 hover:opacity-100 transition-all duration-300 hover:scale-105 bg-gradient-to-br from-indigo-800 via-purple-800 to-teal-800 flex items-center justify-center"
+            >
+            <img
+            src="icons/project-2/Screenshot 2026-03-15 095843.png"
+            alt="Thumbnail 4"
+            class="w-full h-full object-cover"
+          />
+            </button>
           </div>
         </div>
 
@@ -468,7 +515,7 @@
                     >Team Size</span
                   >
                   <p class="text-slate-800 dark:text-white font-medium">
-                    4 Members
+                    Individual Project
                   </p>
                 </li>
               </ul>
@@ -521,13 +568,12 @@
                 View Project
               </h3>
               <div class="space-y-3">
-                <a
-                  href="#"
-                  target="_blank"
+                <button
+                  onclick="openImageModal(0)"
                   class="block w-full bg-indigo-600 hover:bg-indigo-700 text-white text-center py-3 px-4 rounded-xl font-semibold transition-all duration-300 btn-primary"
                 >
                   Live Demo
-                </a>
+                </button>
                 <a
                   href="https://github.com/Revou-FSSE-Jun25/crack-be-perhisi"
                   target="_blank"
@@ -628,6 +674,223 @@
             mobileMenu.classList.add("hidden"),
           ),
         );
+    </script>
+
+    <!-- Image Modal -->
+    <div
+      id="imageModal"
+      class="fixed inset-0 z-50 hidden"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="absolute inset-0 bg-black/90 backdrop-blur-sm"
+        onclick="closeImageModal()"
+      ></div>
+      <div
+        class="relative h-full flex flex-col items-center justify-center p-4"
+      >
+        <button
+          onclick="closeImageModal()"
+          class="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors duration-300"
+          aria-label="Close modal"
+        >
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+        <button
+          onclick="prevImage()"
+          class="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors duration-300"
+          aria-label="Previous image"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            ></path>
+          </svg>
+        </button>
+        <button
+          onclick="nextImage()"
+          class="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors duration-300"
+          aria-label="Next image"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            ></path>
+          </svg>
+        </button>
+        <div class="max-w-4xl w-full">
+          <img
+            id="modalImage"
+            src=""
+            alt="Project Preview"
+            class="w-full h-auto max-h-[70vh] object-contain rounded-lg shadow-2xl"
+          />
+        </div>
+        <div
+          class="mt-6 flex gap-3 overflow-x-auto max-w-4xl w-full justify-center pb-2"
+        >
+          <button
+            onclick="selectImage(0)"
+            class="modal-thumb flex-shrink-0 w-20 h-14 rounded-lg overflow-hidden border-2 border-indigo-500 ring-2 ring-indigo-500/30 transition-all duration-300 hover:scale-105 bg-gradient-to-br from-indigo-500 via-purple-500 to-teal-500 flex items-center justify-center"
+          >
+          <img
+          src="icons/project-2/Screenshot 2026-01-28 032931.png"
+          alt="Preview 1"
+          class="w-full h-full object-cover"
+        />
+          </button>
+          <button
+            onclick="selectImage(1)"
+            class="modal-thumb flex-shrink-0 w-20 h-14 rounded-lg overflow-hidden border-2 border-slate-300 dark:border-slate-600 opacity-60 hover:opacity-100 transition-all duration-300 hover:scale-105 bg-gradient-to-br from-indigo-600 via-purple-600 to-teal-600 flex items-center justify-center"
+          >
+          <img
+          src="icons/project-2/supabase-schema.png"
+          alt="Preview 2"
+          class="w-full h-full object-cover"
+        />
+          </button>
+          <button
+            onclick="selectImage(2)"
+            class="modal-thumb flex-shrink-0 w-20 h-14 rounded-lg overflow-hidden border-2 border-slate-300 dark:border-slate-600 opacity-60 hover:opacity-100 transition-all duration-300 hover:scale-105 bg-gradient-to-br from-indigo-700 via-purple-700 to-teal-700 flex items-center justify-center"
+          >
+          <img
+          src="icons/project-2/Screenshot 2026-03-15 095801.png"
+          alt="Preview 3"
+          class="w-full h-full object-cover"
+        />
+          </button>
+          <button
+            onclick="selectImage(3)"
+            class="modal-thumb flex-shrink-0 w-20 h-14 rounded-lg overflow-hidden border-2 border-slate-300 dark:border-slate-600 opacity-60 hover:opacity-100 transition-all duration-300 hover:scale-105 bg-gradient-to-br from-indigo-800 via-purple-800 to-teal-800 flex items-center justify-center"
+          >
+          <img
+          src="icons/project-2/Screenshot 2026-03-15 095843.png"
+          alt="Preview 4"
+          class="w-full h-full object-cover"
+        />
+          </button>
+        </div>
+        <div class="mt-4 text-white/70 text-sm">
+          <span id="imageCounter">1</span> / 4
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const project2Images = [
+        "icons/project-2/Screenshot 2026-01-28 032931.png",
+        "icons/project-2/supabase-schema.png",
+        "icons/project-2/Screenshot 2026-03-15 095801.png",
+        "icons/project-2/Screenshot 2026-03-15 095843.png",
+      ];
+      let currentIndex = 0;
+
+      function openImageModal(index) {
+        currentIndex = index;
+        updateModalImage();
+        document.getElementById("imageModal").classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+        updateThumbnailSelection();
+      }
+
+      function closeImageModal() {
+        document.getElementById("imageModal").classList.add("hidden");
+        document.body.style.overflow = "";
+      }
+
+      function updateModalImage() {
+        document.getElementById("modalImage").src =
+          project2Images[currentIndex];
+        document.getElementById("imageCounter").textContent = currentIndex + 1;
+      }
+
+      function updateThumbnailSelection() {
+        const thumbnails = document.querySelectorAll(".modal-thumb");
+        thumbnails.forEach((thumb, index) => {
+          if (index === currentIndex) {
+            thumb.classList.remove(
+              "border-slate-300",
+              "dark:border-slate-600",
+              "opacity-60",
+            );
+            thumb.classList.add(
+              "border-indigo-500",
+              "ring-2",
+              "ring-indigo-500/30",
+            );
+            thumb.style.opacity = "1";
+          } else {
+            thumb.classList.add(
+              "border-slate-300",
+              "dark:border-slate-600",
+              "opacity-60",
+            );
+            thumb.classList.remove(
+              "border-indigo-500",
+              "ring-2",
+              "ring-indigo-500/30",
+            );
+            thumb.style.opacity = "";
+          }
+        });
+      }
+
+      function selectImage(index) {
+        currentIndex = index;
+        updateModalImage();
+        updateThumbnailSelection();
+      }
+
+      function nextImage() {
+        currentIndex = (currentIndex + 1) % project2Images.length;
+        updateModalImage();
+        updateThumbnailSelection();
+      }
+
+      function prevImage() {
+        currentIndex =
+          (currentIndex - 1 + project2Images.length) % project2Images.length;
+        updateModalImage();
+        updateThumbnailSelection();
+      }
+
+      document.addEventListener("keydown", (e) => {
+        const modal = document.getElementById("imageModal");
+        if (modal.classList.contains("hidden")) return;
+        if (e.key === "Escape") closeImageModal();
+        if (e.key === "ArrowRight") nextImage();
+        if (e.key === "ArrowLeft") prevImage();
+      });
     </script>
   </body>
 </html>
