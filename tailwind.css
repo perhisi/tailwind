@@ -184,3 +184,40 @@ body {
 #mobile-menu:not(.hidden) {
   animation: fadeInUp 0.3s ease-out;
 }
+
+/* Custom scrollbar for experience cards */
+.max-h-\[500px\].overflow-y-auto::-webkit-scrollbar {
+  width: 6px;
+}
+
+.max-h-\[500px\].overflow-y-auto::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.max-h-\[500px\].overflow-y-auto::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #6366f1, #14b8a6);
+  border-radius: 3px;
+}
+
+.dark .max-h-\[500px\].overflow-y-auto::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dark .max-h-\[500px\].overflow-y-auto::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #818cf8, #2dd4bf);
+}
+
+/* Hide arrows on mobile, show on larger screens */
+@media (max-width: 768px) {
+
+  #exp-prev-btn,
+  #exp-next-btn {
+    display: none;
+  }
+}
+
+/* Touch swipe support */
+#experience-carousel {
+  touch-action: pan-y pinch-zoom;
+}
